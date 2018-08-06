@@ -27,6 +27,9 @@
 		A1C41A362065967500CC3BEB /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1C41A342065967500CC3BEB /* News.xcdatamodeld */; };
 		A1C41A382065967500CC3BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1C41A372065967500CC3BEB /* Assets.xcassets */; };
 		A1C41A3B2065967500CC3BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C41A392065967500CC3BEB /* LaunchScreen.storyboard */; };
+		A46E499121187A4B008580A0 /* IPhoneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499021187A4B008580A0 /* IPhoneRouter.swift */; };
+		A46E499321187A63008580A0 /* IPadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499221187A63008580A0 /* IPadRouter.swift */; };
+		A46E499521187A79008580A0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499421187A79008580A0 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		A1C41A372065967500CC3BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1C41A3A2065967500CC3BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1C41A3C2065967500CC3BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A46E499021187A4B008580A0 /* IPhoneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneRouter.swift; sourceTree = "<group>"; };
+		A46E499221187A63008580A0 /* IPadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPadRouter.swift; sourceTree = "<group>"; };
+		A46E499421187A79008580A0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E18692AE19C0E23324F8AEF1 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,20 +114,16 @@
 		A1C41A2C2065967500CC3BEB /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A46E498F21187A34008580A0 /* Modules */,
 				A15C060E2065AFE300198426 /* NewsCollectionViewCell.swift */,
-				A15C060D2065AFE300198426 /* RequestController.swift */,
 				A1C41A2D2065967500CC3BEB /* AppDelegate.swift */,
 				A1C41A2F2065967500CC3BEB /* ViewController.swift */,
 				A1C41A312065967500CC3BEB /* Main.storyboard */,
 				A1C41A372065967500CC3BEB /* Assets.xcassets */,
 				A1C41A392065967500CC3BEB /* LaunchScreen.storyboard */,
 				A1C41A3C2065967500CC3BEB /* Info.plist */,
-				A1C41A342065967500CC3BEB /* News.xcdatamodeld */,
-				A15C062020663FE100198426 /* News+CoreDataClass.swift */,
-				A15C062120663FE100198426 /* News+CoreDataProperties.swift */,
-				A15C062C2066608500198426 /* News+CoreDataQuery.swift */,
-				A15C06122066396500198426 /* GalleryObject.swift */,
-				A15C062A20665EC500198426 /* DataService.swift */,
+				A46E498D211871A8008580A0 /* Core Data */,
+				A46E498E211878F6008580A0 /* Interactor */,
 				A15C062E206665D900198426 /* LoadingViewController.swift */,
 				A15C06302066F16B00198426 /* Extensions.swift */,
 				A15C06422067A37E00198426 /* DetailViewController.swift */,
@@ -130,6 +132,37 @@
 				A15C06482068240200198426 /* BaseViewController.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		A46E498D211871A8008580A0 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				A1C41A342065967500CC3BEB /* News.xcdatamodeld */,
+				A15C062020663FE100198426 /* News+CoreDataClass.swift */,
+				A15C062120663FE100198426 /* News+CoreDataProperties.swift */,
+				A15C062C2066608500198426 /* News+CoreDataQuery.swift */,
+				A15C06122066396500198426 /* GalleryObject.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		A46E498E211878F6008580A0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A15C060D2065AFE300198426 /* RequestController.swift */,
+				A15C062A20665EC500198426 /* DataService.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A46E498F21187A34008580A0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A46E499021187A4B008580A0 /* IPhoneRouter.swift */,
+				A46E499221187A63008580A0 /* IPadRouter.swift */,
+				A46E499421187A79008580A0 /* Router.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +177,6 @@
 				A1C41A272065967500CC3BEB /* Frameworks */,
 				A1C41A282065967500CC3BEB /* Resources */,
 				B038779D79EF2F6A960B483F /* [CP] Embed Pods Frameworks */,
-				A7CE908D49A7FF311A12A16E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,21 +254,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A7CE908D49A7FF311A12A16E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-News/Pods-News-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B038779D79EF2F6A960B483F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,11 +261,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-News/Pods-News-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -268,10 +285,13 @@
 				A15C062B20665EC500198426 /* DataService.swift in Sources */,
 				A15C062320663FE100198426 /* News+CoreDataProperties.swift in Sources */,
 				A1C41A302065967500CC3BEB /* ViewController.swift in Sources */,
+				A46E499521187A79008580A0 /* Router.swift in Sources */,
+				A46E499321187A63008580A0 /* IPadRouter.swift in Sources */,
 				A1C41A362065967500CC3BEB /* News.xcdatamodeld in Sources */,
 				A15C06472068233200198426 /* ImageViewController.swift in Sources */,
 				A1C41A2E2065967500CC3BEB /* AppDelegate.swift in Sources */,
 				A15C06132066396500198426 /* GalleryObject.swift in Sources */,
+				A46E499121187A4B008580A0 /* IPhoneRouter.swift in Sources */,
 				A15C06312066F16B00198426 /* Extensions.swift in Sources */,
 				A15C06102065AFE300198426 /* RequestController.swift in Sources */,
 				A15C062F206665D900198426 /* LoadingViewController.swift in Sources */,
@@ -417,7 +437,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R3JX6N7H4S;
+				DEVELOPMENT_TEAM = D46YYHA8A9;
 				INFOPLIST_FILE = News/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.student.ArmNews;
@@ -436,7 +456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R3JX6N7H4S;
+				DEVELOPMENT_TEAM = D46YYHA8A9;
 				INFOPLIST_FILE = News/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.student.ArmNews;

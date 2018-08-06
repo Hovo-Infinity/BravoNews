@@ -67,6 +67,20 @@ extension UIImageView {
     }
 }
 
+extension UIViewController {
+    class func instantiateViewController<T>() -> T {
+        let mainStoryboard = UIStoryboard.main()
+        let id = String(describing: T.self).components(separatedBy: ".").last
+        return mainStoryboard.instantiateViewController(withIdentifier: id!) as! T
+    }
+}
+
+extension UIStoryboard {
+    class func main() -> UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
+    }
+}
+
 extension UIColor {
     /**
         return random color

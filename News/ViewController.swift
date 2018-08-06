@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftyJSON
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     private var collectionView: UICollectionView!
@@ -16,7 +15,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(dataFetchEnded), name: dataFetchEnd, object: nil)
         loadingViewController = LoadingViewController()
         addLoadingViewController()
         DataService.sharedInstance.startFetchingData()
