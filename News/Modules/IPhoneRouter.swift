@@ -10,6 +10,7 @@ import UIKit
 
 class IPhoneRouter: Router {
     func initModule() -> UIViewController {
+        print("iPhone")
         let vc: ViewController = UIViewController.instantiateViewController()
         return vc
     }

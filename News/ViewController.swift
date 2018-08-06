@@ -8,7 +8,10 @@
 
 import UIKit
 
+typealias Presenter = ViewToPresenterProtocol & InterectorToPresenterProtocol
+
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    let presenter: Presenter? = nil
     private var collectionView: UICollectionView!
     private var response: [News]!
     private var loadingViewController: LoadingViewController!

@@ -30,6 +30,10 @@
 		A46E499121187A4B008580A0 /* IPhoneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499021187A4B008580A0 /* IPhoneRouter.swift */; };
 		A46E499321187A63008580A0 /* IPadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499221187A63008580A0 /* IPadRouter.swift */; };
 		A46E499521187A79008580A0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499421187A79008580A0 /* Router.swift */; };
+		A46E499821188C88008580A0 /* ViewToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499721188C88008580A0 /* ViewToPresenterProtocol.swift */; };
+		A46E499A21188C9B008580A0 /* InterectorToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499921188C9B008580A0 /* InterectorToPresenterProtocol.swift */; };
+		A46E499C21188CAC008580A0 /* PresentorToInterectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499B21188CAC008580A0 /* PresentorToInterectorProtocol.swift */; };
+		A46E499E21188CBE008580A0 /* PresenterToRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499D21188CBE008580A0 /* PresenterToRouterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		A46E499021187A4B008580A0 /* IPhoneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneRouter.swift; sourceTree = "<group>"; };
 		A46E499221187A63008580A0 /* IPadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPadRouter.swift; sourceTree = "<group>"; };
 		A46E499421187A79008580A0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A46E499721188C88008580A0 /* ViewToPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToPresenterProtocol.swift; sourceTree = "<group>"; };
+		A46E499921188C9B008580A0 /* InterectorToPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterectorToPresenterProtocol.swift; sourceTree = "<group>"; };
+		A46E499B21188CAC008580A0 /* PresentorToInterectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentorToInterectorProtocol.swift; sourceTree = "<group>"; };
+		A46E499D21188CBE008580A0 /* PresenterToRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterToRouterProtocol.swift; sourceTree = "<group>"; };
 		E18692AE19C0E23324F8AEF1 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +122,7 @@
 		A1C41A2C2065967500CC3BEB /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A46E499621188C76008580A0 /* Protocols */,
 				A46E498F21187A34008580A0 /* Modules */,
 				A15C060E2065AFE300198426 /* NewsCollectionViewCell.swift */,
 				A1C41A2D2065967500CC3BEB /* AppDelegate.swift */,
@@ -163,6 +172,17 @@
 				A46E499421187A79008580A0 /* Router.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		A46E499621188C76008580A0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A46E499721188C88008580A0 /* ViewToPresenterProtocol.swift */,
+				A46E499921188C9B008580A0 /* InterectorToPresenterProtocol.swift */,
+				A46E499B21188CAC008580A0 /* PresentorToInterectorProtocol.swift */,
+				A46E499D21188CBE008580A0 /* PresenterToRouterProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,12 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46E499C21188CAC008580A0 /* PresentorToInterectorProtocol.swift in Sources */,
 				A15C06432067A37E00198426 /* DetailViewController.swift in Sources */,
 				A15C064520681B8F00198426 /* GalleryViewController.swift in Sources */,
 				A15C062D2066608500198426 /* News+CoreDataQuery.swift in Sources */,
+				A46E499E21188CBE008580A0 /* PresenterToRouterProtocol.swift in Sources */,
 				A15C062B20665EC500198426 /* DataService.swift in Sources */,
 				A15C062320663FE100198426 /* News+CoreDataProperties.swift in Sources */,
 				A1C41A302065967500CC3BEB /* ViewController.swift in Sources */,
+				A46E499A21188C9B008580A0 /* InterectorToPresenterProtocol.swift in Sources */,
 				A46E499521187A79008580A0 /* Router.swift in Sources */,
 				A46E499321187A63008580A0 /* IPadRouter.swift in Sources */,
 				A1C41A362065967500CC3BEB /* News.xcdatamodeld in Sources */,
@@ -295,6 +318,7 @@
 				A15C06312066F16B00198426 /* Extensions.swift in Sources */,
 				A15C06102065AFE300198426 /* RequestController.swift in Sources */,
 				A15C062F206665D900198426 /* LoadingViewController.swift in Sources */,
+				A46E499821188C88008580A0 /* ViewToPresenterProtocol.swift in Sources */,
 				A15C06492068240200198426 /* BaseViewController.swift in Sources */,
 				A15C062220663FE100198426 /* News+CoreDataClass.swift in Sources */,
 				A15C06112065AFE300198426 /* NewsCollectionViewCell.swift in Sources */,

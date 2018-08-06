@@ -10,6 +10,7 @@ import UIKit
 
 class IPadRouter: Router {
     func initModule() -> UIViewController {
+        print("iPad")
         let vc: UISplitViewController = UIViewController.instantiateViewController()
         return vc
     }

@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             router = IPhoneRouter()
         }
-        window?.rootViewController = router?.initModule()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = router?.initModule()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
         return true
     }
 
