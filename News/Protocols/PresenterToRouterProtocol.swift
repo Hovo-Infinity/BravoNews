@@ -6,8 +6,8 @@
 //  Copyright © 2018 David Varosyan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol PresenterToRouterProtocol {
-    
+    func initModule() -> UIViewController
 }

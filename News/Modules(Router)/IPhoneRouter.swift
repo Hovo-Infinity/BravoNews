@@ -8,10 +8,16 @@
 
 import UIKit
 
-class IPhoneRouter: Router {
+class IPhoneRouter: PresenterToRouterProtocol {
     func initModule() -> UIViewController {
-        print("iPhone")
+        let presenter = NewsPresenter()
+        let interactor = NewsInteractor()
         let vc: ViewController = UIViewController.instantiateViewController()
+        vc.presenter = presenter
+        interactor.presenter = presenter
+        presenter.view = vc
+        presenter.interactor = interactor
+        presenter.router = self
         return vc
     }
 }

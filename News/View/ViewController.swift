@@ -11,7 +11,7 @@ import UIKit
 typealias Presenter = ViewToPresenterProtocol & InterectorToPresenterProtocol
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    let presenter: Presenter? = nil
+    var presenter: Presenter?
     private var collectionView: UICollectionView!
     private var response: [News]!
     private var loadingViewController: LoadingViewController!
@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         loadingViewController = LoadingViewController()
         addLoadingViewController()
-        DataService.sharedInstance.startFetchingData()
+        presenter?.updateView()
     }
 
     private func addLoadingViewController() {
@@ -39,29 +39,30 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @objc
     private func dataFetchEnded() {
         self.response = News.allObjects()
-        removeLoadingViewController()
-        createCollectionView()
+        
     }
     
     private func createCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 8
-        layout.itemSize = CGSize(width: view.frame.width - 16, height: 350)
-        layout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 2)
-        var frame = view.bounds
-        if #available(iOS 11.0, *) {
-            frame.size.height -= view.safeAreaInsets.top
-            frame.origin.y = view.safeAreaInsets.top
-        } else {
-            frame.size.height -= 20
-            frame.origin.y = 20
+        if (collectionView == nil) {
+            let layout = UICollectionViewFlowLayout()
+            layout.minimumLineSpacing = 8
+            layout.itemSize = CGSize(width: view.frame.width - 16, height: 350)
+            layout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 2)
+            var frame = view.bounds
+            if #available(iOS 11.0, *) {
+                frame.size.height -= view.safeAreaInsets.top
+                frame.origin.y = view.safeAreaInsets.top
+            } else {
+                frame.size.height -= 20
+                frame.origin.y = 20
+            }
+            collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            collectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: "NewsCollectionViewCell")
+            collectionView.backgroundColor = .random;
+            view.addSubview(collectionView)
         }
-        collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(NewsCollectionViewCell.self, forCellWithReuseIdentifier: "NewsCollectionViewCell")
-        collectionView.backgroundColor = .random;
-        view.addSubview(collectionView)
     }
 
     // MARK: - UICollectionViewDelegate
@@ -95,6 +96,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             cell?.backgroundColor = .lightGray
         }
     }
+}
+
+extension ViewController: PresenterToViewProtocol {
+    func showNews(_ news: NewsList) {
+        removeLoadingViewController()
+        createCollectionView()
+    }
+    
+    func showError(_ error: Error) {
+        let alert = UIAlertController(title: "Error",
+                                      message: "\(error.localizedDescription)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        show(alert, sender: nil)
+    }
+    
     
 }
 

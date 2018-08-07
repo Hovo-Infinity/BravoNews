@@ -29,11 +29,14 @@
 		A1C41A3B2065967500CC3BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C41A392065967500CC3BEB /* LaunchScreen.storyboard */; };
 		A46E499121187A4B008580A0 /* IPhoneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499021187A4B008580A0 /* IPhoneRouter.swift */; };
 		A46E499321187A63008580A0 /* IPadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499221187A63008580A0 /* IPadRouter.swift */; };
-		A46E499521187A79008580A0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499421187A79008580A0 /* Router.swift */; };
 		A46E499821188C88008580A0 /* ViewToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499721188C88008580A0 /* ViewToPresenterProtocol.swift */; };
 		A46E499A21188C9B008580A0 /* InterectorToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499921188C9B008580A0 /* InterectorToPresenterProtocol.swift */; };
 		A46E499C21188CAC008580A0 /* PresentorToInterectorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499B21188CAC008580A0 /* PresentorToInterectorProtocol.swift */; };
 		A46E499E21188CBE008580A0 /* PresenterToRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E499D21188CBE008580A0 /* PresenterToRouterProtocol.swift */; };
+		A46E49A121196809008580A0 /* NewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E49A021196809008580A0 /* NewsPresenter.swift */; };
+		A46E49A32119685C008580A0 /* PresenterToViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E49A22119685C008580A0 /* PresenterToViewProtocol.swift */; };
+		A46E49A621196BD5008580A0 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E49A521196BD5008580A0 /* NewsList.swift */; };
+		A46E49A8211979A8008580A0 /* NewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46E49A7211979A8008580A0 /* NewsInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,11 +66,14 @@
 		A1C41A3C2065967500CC3BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A46E499021187A4B008580A0 /* IPhoneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPhoneRouter.swift; sourceTree = "<group>"; };
 		A46E499221187A63008580A0 /* IPadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPadRouter.swift; sourceTree = "<group>"; };
-		A46E499421187A79008580A0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A46E499721188C88008580A0 /* ViewToPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToPresenterProtocol.swift; sourceTree = "<group>"; };
 		A46E499921188C9B008580A0 /* InterectorToPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterectorToPresenterProtocol.swift; sourceTree = "<group>"; };
 		A46E499B21188CAC008580A0 /* PresentorToInterectorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentorToInterectorProtocol.swift; sourceTree = "<group>"; };
 		A46E499D21188CBE008580A0 /* PresenterToRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterToRouterProtocol.swift; sourceTree = "<group>"; };
+		A46E49A021196809008580A0 /* NewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenter.swift; sourceTree = "<group>"; };
+		A46E49A22119685C008580A0 /* PresenterToViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterToViewProtocol.swift; sourceTree = "<group>"; };
+		A46E49A521196BD5008580A0 /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		A46E49A7211979A8008580A0 /* NewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInteractor.swift; sourceTree = "<group>"; };
 		E18692AE19C0E23324F8AEF1 /* Pods-News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,23 +128,18 @@
 		A1C41A2C2065967500CC3BEB /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A46E49A921197C66008580A0 /* Utils */,
+				A46E49A421196BB4008580A0 /* Models(Entity) */,
+				A46E499F211967E4008580A0 /* Presenter */,
 				A46E499621188C76008580A0 /* Protocols */,
-				A46E498F21187A34008580A0 /* Modules */,
-				A15C060E2065AFE300198426 /* NewsCollectionViewCell.swift */,
+				A46E498F21187A34008580A0 /* Modules(Router) */,
+				A46E498E211878F6008580A0 /* Interactor */,
+				A46E49AA21197C93008580A0 /* View */,
 				A1C41A2D2065967500CC3BEB /* AppDelegate.swift */,
-				A1C41A2F2065967500CC3BEB /* ViewController.swift */,
 				A1C41A312065967500CC3BEB /* Main.storyboard */,
 				A1C41A372065967500CC3BEB /* Assets.xcassets */,
 				A1C41A392065967500CC3BEB /* LaunchScreen.storyboard */,
 				A1C41A3C2065967500CC3BEB /* Info.plist */,
-				A46E498D211871A8008580A0 /* Core Data */,
-				A46E498E211878F6008580A0 /* Interactor */,
-				A15C062E206665D900198426 /* LoadingViewController.swift */,
-				A15C06302066F16B00198426 /* Extensions.swift */,
-				A15C06422067A37E00198426 /* DetailViewController.swift */,
-				A15C064420681B8F00198426 /* GalleryViewController.swift */,
-				A15C06462068233200198426 /* ImageViewController.swift */,
-				A15C06482068240200198426 /* BaseViewController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -160,18 +161,18 @@
 			children = (
 				A15C060D2065AFE300198426 /* RequestController.swift */,
 				A15C062A20665EC500198426 /* DataService.swift */,
+				A46E49A7211979A8008580A0 /* NewsInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		A46E498F21187A34008580A0 /* Modules */ = {
+		A46E498F21187A34008580A0 /* Modules(Router) */ = {
 			isa = PBXGroup;
 			children = (
 				A46E499021187A4B008580A0 /* IPhoneRouter.swift */,
 				A46E499221187A63008580A0 /* IPadRouter.swift */,
-				A46E499421187A79008580A0 /* Router.swift */,
 			);
-			path = Modules;
+			path = "Modules(Router)";
 			sourceTree = "<group>";
 		};
 		A46E499621188C76008580A0 /* Protocols */ = {
@@ -181,8 +182,48 @@
 				A46E499921188C9B008580A0 /* InterectorToPresenterProtocol.swift */,
 				A46E499B21188CAC008580A0 /* PresentorToInterectorProtocol.swift */,
 				A46E499D21188CBE008580A0 /* PresenterToRouterProtocol.swift */,
+				A46E49A22119685C008580A0 /* PresenterToViewProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A46E499F211967E4008580A0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A46E49A021196809008580A0 /* NewsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A46E49A421196BB4008580A0 /* Models(Entity) */ = {
+			isa = PBXGroup;
+			children = (
+				A46E498D211871A8008580A0 /* Core Data */,
+				A46E49A521196BD5008580A0 /* NewsList.swift */,
+			);
+			path = "Models(Entity)";
+			sourceTree = "<group>";
+		};
+		A46E49A921197C66008580A0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A15C06302066F16B00198426 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A46E49AA21197C93008580A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A15C060E2065AFE300198426 /* NewsCollectionViewCell.swift */,
+				A1C41A2F2065967500CC3BEB /* ViewController.swift */,
+				A15C062E206665D900198426 /* LoadingViewController.swift */,
+				A15C06422067A37E00198426 /* DetailViewController.swift */,
+				A15C064420681B8F00198426 /* GalleryViewController.swift */,
+				A15C06462068233200198426 /* ImageViewController.swift */,
+				A15C06482068240200198426 /* BaseViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,21 +343,24 @@
 				A46E499C21188CAC008580A0 /* PresentorToInterectorProtocol.swift in Sources */,
 				A15C06432067A37E00198426 /* DetailViewController.swift in Sources */,
 				A15C064520681B8F00198426 /* GalleryViewController.swift in Sources */,
+				A46E49A121196809008580A0 /* NewsPresenter.swift in Sources */,
 				A15C062D2066608500198426 /* News+CoreDataQuery.swift in Sources */,
 				A46E499E21188CBE008580A0 /* PresenterToRouterProtocol.swift in Sources */,
 				A15C062B20665EC500198426 /* DataService.swift in Sources */,
 				A15C062320663FE100198426 /* News+CoreDataProperties.swift in Sources */,
 				A1C41A302065967500CC3BEB /* ViewController.swift in Sources */,
 				A46E499A21188C9B008580A0 /* InterectorToPresenterProtocol.swift in Sources */,
-				A46E499521187A79008580A0 /* Router.swift in Sources */,
 				A46E499321187A63008580A0 /* IPadRouter.swift in Sources */,
+				A46E49A8211979A8008580A0 /* NewsInteractor.swift in Sources */,
 				A1C41A362065967500CC3BEB /* News.xcdatamodeld in Sources */,
+				A46E49A32119685C008580A0 /* PresenterToViewProtocol.swift in Sources */,
 				A15C06472068233200198426 /* ImageViewController.swift in Sources */,
 				A1C41A2E2065967500CC3BEB /* AppDelegate.swift in Sources */,
 				A15C06132066396500198426 /* GalleryObject.swift in Sources */,
 				A46E499121187A4B008580A0 /* IPhoneRouter.swift in Sources */,
 				A15C06312066F16B00198426 /* Extensions.swift in Sources */,
 				A15C06102065AFE300198426 /* RequestController.swift in Sources */,
+				A46E49A621196BD5008580A0 /* NewsList.swift in Sources */,
 				A15C062F206665D900198426 /* LoadingViewController.swift in Sources */,
 				A46E499821188C88008580A0 /* ViewToPresenterProtocol.swift in Sources */,
 				A15C06492068240200198426 /* BaseViewController.swift in Sources */,

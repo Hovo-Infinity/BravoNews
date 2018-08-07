@@ -12,40 +12,7 @@ import CoreData
 
 class DataService: NSObject {
     static let sharedInstance = DataService()
-    private var requestController: RequestController!
 
-    /**
-        begin fetch data grom our backend
-        then save it into core data
-        post notification after end fetching
-     */
-    func startFetchingData() {
-        requestController = RequestController(url: URL(string: "https://www.helix.am/temp/json.php"))
-        requestController.comletion = {[unowned self](UrlResponse, data) in
-//            self.clearDatabase()
-//            let json = try! JSON(data: data!)
-//            for index in 0..<json["metadata"].arrayValue.count  {
-//                let metaJson: JSON = json["metadata"].arrayValue[index]
-//                let dictionary = News.createDictionaryForm(json: metaJson)
-//                let entity = NSEntityDescription.entity(forEntityName: "News", in: DataService.viewContext())!
-//                let new = NSManagedObject(entity: entity, insertInto: DataService.viewContext()) as! News
-//                new.id = Int16(index)
-//                new.updateValuesFrom(dictionary: dictionary)
-//            }
-//            DataService.saveContext()
-//            let userInfo: [String: Any] = ["success": true]
-        }
-        requestController.failure = { (err) in
-            print(err.localizedDescription)
-            var userInfo: [String: Any] = [:]
-            if News.allObjectsCount() != 0 {
-                userInfo = ["success": true]
-            } else {
-                userInfo = ["success": false, "error": err]
-            }
-        }
-        requestController.doGetRequest()
-    }
     
     
     

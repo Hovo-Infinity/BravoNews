@@ -9,5 +9,6 @@
 import Foundation
 
 protocol InterectorToPresenterProtocol {
-    
+    func newsFetchEnded(news: NewsList)
+    func newsFetchFailed(error: Error)
 }

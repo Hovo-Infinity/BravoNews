@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IPadRouter: Router {
+class IPadRouter: PresenterToRouterProtocol {
     func initModule() -> UIViewController {
         print("iPad")
         let vc: UISplitViewController = UIViewController.instantiateViewController()
